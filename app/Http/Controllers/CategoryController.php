@@ -12,7 +12,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::orderByDesc('id')->get();
+        return view('welcome', compact('categories'));
     }
 
     /**
